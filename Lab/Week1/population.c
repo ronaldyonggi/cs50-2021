@@ -4,6 +4,7 @@
 int main(void)
 {
     // TODO: Prompt for start size
+    /* Keep prompting until input number is 9 or greater */
     int start;
     do
     {
@@ -12,6 +13,7 @@ int main(void)
     while (start < 9);
 
     // TODO: Prompt for end size
+    // Keep prompting until input number is equal or greater than 'start'
     int end;
     do
     {
@@ -20,7 +22,8 @@ int main(void)
     while (end < start);
 
     // TODO: Calculate number of years until we reach threshold
-    int years = 0;
+    int years = 0; //years that have passed
+
     while (start < end)
     {
         start = start + (start / 3) - (start / 4);
