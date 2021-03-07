@@ -1,9 +1,10 @@
-#include <stdio.h>
 #include <cs50.h>
+#include <stdio.h>
 
 int main(void)
 {
-    // Takes user input of height of bricks, has to be between 1 and 8, inclusive.
+    // TODO: Prompt for input height
+    // Keep prompting until input height is between (including) 1 to 8.
     int height;
     do
     {
@@ -11,28 +12,31 @@ int main(void)
     }
     while (height < 1 || height > 8);
 
+    // Prints the pyramid
     for (int i = 1; i <= height; i++)
     {
-        // Prints the spaces, depending on the height and i
-        for (int h = height; h > i; h--)
+        // Prints the spaces before the hash. The end point is height - i.
+        for (int dot = 1; dot <= height - i; dot++)
         {
             printf(" ");
         }
-        // Prints the bricks, amount of bricks depending on i
-        for (int j = 1; j <= i; j++)
+
+        // Prints the left side hashes
+        for (int hash = 1; hash <= i; hash++)
         {
             printf("#");
         }
 
-        // Separate left triangular bricks and right triangular bricks with
-        // 2 spaces.
+        // Prints 2 spaces for separator between left side pyramids and right side pyramids
         printf("  ");
 
-        // For loop for bricks on the right side
-        for (int j = 1; j <= i; j++)
+        // Prints the right side hashes
+        for (int hash = 1; hash <= i; hash++)
         {
             printf("#");
         }
+
+        // Ends with a newline
         printf("\n");
     }
 }
